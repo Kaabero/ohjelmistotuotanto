@@ -2,4 +2,4 @@
 
 ## Ohtuvaraston osoite
 
-[Tehtävät 2-13](https://github.com/Kaabero/ohtuvarasto)
+[Ohtuvarasto](https://github.com/Kaabero/ohtuvarasto)
