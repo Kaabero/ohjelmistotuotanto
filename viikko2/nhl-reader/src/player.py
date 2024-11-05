@@ -7,5 +7,8 @@ class Player:
         self.nationality = nationality
         self.games = games
     
+    def get_points(self):
+        return self.goals+self.assists
+    
     def __str__(self):
-        return f"{self.name} team {self.team} goals {self.goals} assists {self.assists}"
+        return f"{self.name:20} {self.team} {self.goals:5} + {self.assists:2} = {self.get_points()}"

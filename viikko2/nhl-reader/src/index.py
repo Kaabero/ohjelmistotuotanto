@@ -13,7 +13,8 @@ def main():
 
     print("Players from FIN:")
 
-    finnish_players = list(filter(lambda player: player.nationality == 'FIN', players))
+    finnish_players = sorted(list(filter(lambda player: player.nationality == 'FIN', players)), key=lambda player: player.get_points(), reverse=True)
+
 
     for player in finnish_players:
             print(player)
