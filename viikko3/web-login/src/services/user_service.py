@@ -4,7 +4,11 @@ from repositories.user_repository import (
 )
 
 
+
 class UserInputError(Exception):
+    pass
+
+class PasswordInputError(Exception):
     pass
 
 
@@ -40,7 +44,20 @@ class UserService:
         if not username or not password:
             raise UserInputError("Username and password are required")
 
-        # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
+        if password!=password_confirmation:
+            raise PasswordInputError("Password and password confirmation differs")
+        
+        user = self._user_repository.find_by_username(username)
+
+        if user:
+            raise UserInputError("Username already taken")
+        
+        if len(username)<3:
+            raise UserInputError("Username should be at least 3 characters")
+        
+        if len(password)<8 or password.isalpha():
+            raise PasswordInputError("Password should be at least 8 characters and it cannot consist of letters only")
+    
 
 
 user_service = UserService()
