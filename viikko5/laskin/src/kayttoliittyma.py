@@ -5,17 +5,20 @@ from tkinter import ttk, constants, StringVar
 class Komentotehdas:
     def __init__(self, sovelluslogiikka):
         self.sovelluslogiikka = sovelluslogiikka
+        self.komennot=[]
 
 
         self._komennot = {
             Komento.SUMMA: Summa(self.sovelluslogiikka),
             Komento.EROTUS: Erotus(self.sovelluslogiikka),
             Komento.NOLLAUS: Nollaus(self.sovelluslogiikka),
-            Komento.KUMOA: Kumoaminen(self.sovelluslogiikka)
+            Komento.KUMOA: Kumoaminen(self.sovelluslogiikka, self.komennot)
         }
    
     def hae(self, komento):
         if komento in self._komennot:
+            if komento != Komento.KUMOA:
+                self.komennot.append(self._komennot[komento])
             return self._komennot[komento]
 
 
@@ -29,31 +32,53 @@ class Komento(Enum):
 class Summa:
     def __init__(self, sovelluslogiikka):
         self.sovelluslogiikka = sovelluslogiikka
+        self.edellinen = None
 
     def suorita(self, arvo):
+        self.edellinen = self.sovelluslogiikka.arvo()
         self.sovelluslogiikka.plus(arvo)
+
+    def kumoa(self):
+        self.sovelluslogiikka.aseta_arvo(self.edellinen)
+
+    
 
 class Erotus:
     def __init__(self, sovelluslogiikka):
         self.sovelluslogiikka = sovelluslogiikka
+        self.edellinen = None
 
     def suorita(self, arvo):
+        self.edellinen = self.sovelluslogiikka.arvo()
         self.sovelluslogiikka.miinus(arvo)
+    
+    def kumoa(self):
+        self.sovelluslogiikka.aseta_arvo(self.edellinen)
+      
 
 
 class Nollaus:
     def __init__(self, sovelluslogiikka):
         self.sovelluslogiikka = sovelluslogiikka
+        self.edellinen = None
 
     def suorita(self, arvo):
+        self.edellinen = self.sovelluslogiikka.arvo()
         self.sovelluslogiikka.nollaa()
 
+    def kumoa(self):
+        self.sovelluslogiikka.aseta_arvo(self.edellinen)
+
 class Kumoaminen:
-    def __init__(self, sovelluslogiikka):
+    def __init__(self, sovelluslogiikka, komennot):
         self.sovelluslogiikka = sovelluslogiikka
+        self.komennot=komennot
+        
 
     def suorita(self, arvo):
-        pass
+        if len(self.komennot)>0:
+            edellinen_komento = self.komennot.pop()
+            edellinen_komento.kumoa()
 
 
 class Kayttoliittyma:
