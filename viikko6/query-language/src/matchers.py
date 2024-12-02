@@ -9,6 +9,21 @@ class And:
 
         return True
 
+class Or:
+    def __init__(self, *matchers):
+        self._matchers = matchers
+        
+
+    def test(self, player):
+        count=0
+        for matcher in self._matchers:
+            if matcher.test(player):
+                count+=1
+
+        if count>0:
+            return True
+        return False
+
 
 class PlaysIn:
     def __init__(self, team):
