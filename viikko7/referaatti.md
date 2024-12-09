@@ -1,0 +1,9 @@
+## Referaatti
+
+# Kalle Ilveksen kandidaattityö: Scrumban-menetelmän käyttö ketterässä ohjelmistokehityksessä
+
+Ketterät ohjelmistuotantomenetemät ovat syntyneet vastauksena perinteisten jäykempien ohjelmistuotantomenetelmien, kuten vesiputousmallin, ongelmiin. Scrum ja Kanban ovat suosittuja ketterän ohjelmistotuotannon menetelmiä ja ne mahdollistavat myös periaatteidensa mukauttamisen projektin tarpeisiin. Muun muassa nopeasti muuttuvissa ja arvaamattomissa projekteissa voi olla tarkoituksenmukaista käyttää Scrumin ja Kanbanin yhdistelmää, Scrumbania, jonka keskeinen vaikuttaja oli Corey Ladas.
+
+Scrumiin kuuluvien menetelmien on huomattu hankaloittavan muuttuviin tilanteisiin sopeutumista, mutta samalla Kanban voi olla liian joustava menetelmä, sillä se ei sisällä juurikaan rajoituksia tai sääntöjä. Monet Scrumissa käytössä olevat periaatteet ovat Kanbanissa valinnaisia. Ladas näkeekin Kanbanin olevan enemmän työkalu prosessien muokkaamiseen tilanteen ja projektin mukaan kuin valmis menetelmä sellaisenaan. Scrumban mukauttaa Scrumin ja Kanbanin piirteitä erilaisiin projekteihin sopiviksi ja soveltaa Kanbanin meneltemiä niissä kohdin, missä Scrum osoittautuu liian jäykäksi: Esimerkiksi Scrumille tyypilliset aikarajoiteut iteraatiot ja työmäärän arvioinnit voidaan Scrumbanissa korvata työnkulun jatkuvalla seurannalla Kanbanista tuttujen kanban -taulujen avulla. Toisaalta Scrummista on hyvä ottaa mkaan elementit, jotka Kanbanissa voisivat rajoittamattomuuden takia johtaa ongelmiin: Scrumbanissa suunnittelua olisi Ladasin mukaan hyvä tehdä tasaisin väliajoin ja liittää siihen Scrumin mukaiset säännölliset tapaamiset ja retrospektiivi. 
+
+Scrum ja Kanban eivät ole tarkkaan määriteltyjä prosesseja, vaan välineitä prosessien kehittämiseen. Myös niitä yhdistettäessä sopiva prosessi syntyy kokeilemisen ja kokemuksen kautta.
